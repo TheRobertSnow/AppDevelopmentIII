@@ -1,22 +1,37 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchTheaters } from '../../actions/fetchActions';
+import { fetchTheaters, fetchToken } from '../../actions/fetchActions';
 
 class Cinemas extends React.Component {
+  componentDidMount() {
+    this.props.fetchToken();
+    console.log('BabaBooey');
+    console.log(this.props);
+  }
+
   render() {
-    fetchTheaters("BabaBooey");
-    console.log(this.props.cinemas);
-    return(
+    console.log(this.props);
+    return (
       <View style={{backgroundColor: '#555', height: 200, width: 100}}>
-        <Text>BabaBooey</Text>
+        <TouchableOpacity>
+          <Text>BabaBooey</Text>
+        </TouchableOpacity>
       </View>
     );
   }
 }
 
-const mapStateToProps = reduxStoreState => {
-  return { cinemas: reduxStoreState.theaterReducer };
+function mapStateToProps(state) {
+  return {
+    cinemas: state.cinemas,
+    token: state.token,
+  };
+}
+
+const mapDispatchToProps = {
+  fetchTheaters,
+  fetchToken,
 };
 
-export default connect(mapStateToProps, { fetchTheaters })(Cinemas);
+export default connect(mapStateToProps, mapDispatchToProps)(Cinemas);
