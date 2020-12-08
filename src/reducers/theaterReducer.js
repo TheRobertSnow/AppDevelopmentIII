@@ -1,10 +1,11 @@
 import * as constants from '../constants';
-import fetchTheaterComp from '../components/FetchTheaters';
+import fetchTheatersFromApiAsync from '../components/FetchTheaters';
 
-export default function (state = null, action) {
+export default async function (state = null, action) {
   switch (action.type) {
     case constants.FETCH_THEATERS:
-      return fetchTheaterComp;
+      console.log(action.payload);
+      return fetchTheatersFromApiAsync;
     default: return state;
   }
 }

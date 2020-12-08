@@ -1,7 +1,8 @@
 import token from '../GetApiToken';
 
-export const fetchMoviesFromApiAsync = async () => {
+const fetchMoviesFromApiAsync = async () => {
   try {
+    console.log('Fetching Movies');
     const response = await fetch('https://api.kvikmyndir.is/movies', {
       method: 'GET',
       headers: {
@@ -16,3 +17,5 @@ export const fetchMoviesFromApiAsync = async () => {
     console.error(error);
   }
 };
+
+export default fetchMoviesFromApiAsync;

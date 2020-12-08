@@ -1,10 +1,10 @@
-export const getMoviesFromApiAsync = async () => {
+const getMoviesFromApiAsync = async () => {
   try {
     const response = await fetch('https://api.kvikmyndir.is/authenticate', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         username: 'Limgur',
@@ -17,3 +17,5 @@ export const getMoviesFromApiAsync = async () => {
     console.error(error);
   }
 };
+
+export default getMoviesFromApiAsync;
