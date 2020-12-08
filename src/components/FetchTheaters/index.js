@@ -1,8 +1,8 @@
 import token from '../GetApiToken';
 
-export const fetchMoviesFromApiAsync = async () => {
+const fetchTheatersFromApiAsync = async () => {
   try {
-    const response = await fetch('https://api.kvikmyndir.is/movies', {
+    const response = await fetch('https://api.kvikmyndir.is/theaters', {
       method: 'GET',
       headers: {
         Accept: 'application/json',

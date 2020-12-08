@@ -1,8 +1,13 @@
 import React from 'react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import StackNavigator from './src/routes';
+import reducers from './src/reducers';
 
 export default function App() {
   return (
-    <StackNavigator />
+    <Provider store={createStore(reducers)}>
+      <StackNavigator />
+    </Provider>
   );
 }
