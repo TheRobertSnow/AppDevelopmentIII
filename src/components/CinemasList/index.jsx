@@ -7,25 +7,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { connect } from 'react-redux';
-import { Dimensions } from 'react-native';
-
-const windowWidth = Dimensions.get('window').width;
+import Cinema from '../Cinema';
 
 const styles = StyleSheet.create({
-  cinemaContainer: {
-    backgroundColor: '#fff',
-    marginBottom: 10,
-    flexDirection: 'row',
-    padding: 15,
-    borderRadius: 10,
-    width: windowWidth - 100,
-    alignItems: 'center',
-  },
-  cinemaContainerText: {
-    marginLeft: 5,
-    marginRight: 5,
-    fontSize: 16,
-  },
   listContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -43,12 +27,11 @@ class CinemasList extends React.Component {
           data={this.props.cinemas}
           renderItem={({ item: { id, name, website } }) => {
             return (
-              <TouchableOpacity>
-                <View style={styles.cinemaContainer}>
-                  <Text style={styles.cinemaContainerText}>{ name }</Text>
-                  <Text style={styles.cinemaContainerText}>{ website }</Text>
-                </View>
-              </TouchableOpacity>
+              <Cinema
+                id={id}
+                name={name}
+                website={website}
+              />
             );
           }}
         keyExtractor={ cinema => cinema.id.toString(10) }/>

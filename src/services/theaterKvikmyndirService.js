@@ -10,7 +10,7 @@ const theaterService = async (token) => {
     },
   });
   const data = await result.json();
-  return data;
+  return data.sort((a, b) => a.name.localeCompare(b.name));
 };
 
 export default theaterService;
