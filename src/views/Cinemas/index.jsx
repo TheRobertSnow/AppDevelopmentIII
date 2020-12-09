@@ -16,7 +16,7 @@ class Cinemas extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    token: state.tokenReducer,
+    theaters: state.theaterReducer,
   };
 };
 
