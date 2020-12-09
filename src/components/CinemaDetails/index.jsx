@@ -14,11 +14,10 @@ class ContactDetail extends React.Component {
             return (
               <TouchableOpacity activeOpacity={0.8}>
                 <View style={styles.container}>
-                  <Text style={styles.containerText}>{id}</Text>
-                  <Text style={styles.containerText}>{name}</Text>
+                  <Text style={styles.containerName}>{name}</Text>
                   <Text style={styles.containerText}>{description}</Text>
                   <Text style={styles.containerText}>{address}</Text>
-                  // skoða með þetta, þvi address fieldinn i database er actually 'address ', s.s með eh auka bili for some reason
+                  <Text style={styles.containerText}>SKOÐA MEÐ ADDRESS, þvi address fieldinn i database er actually 'address ', s.s með eh auka bili for some reason</Text>
                   <Text style={styles.containerText}>{city}</Text>
                   <Text style={styles.containerText}>{phone}</Text>
                   <Text style={styles.containerText}>{website}</Text>

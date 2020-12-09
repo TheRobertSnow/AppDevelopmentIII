@@ -9,8 +9,14 @@ export default StyleSheet.create({
     marginBottom: 5,
     borderRadius: 10,
     backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   containerText: {
     margin: 5,
+  },
+  containerName: {
+    margin: 5,
+    fontSize: 25,
   },
 });
