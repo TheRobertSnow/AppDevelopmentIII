@@ -1,15 +1,12 @@
 import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
+import CinemasList from '../../components/CinemasList';
 
 class Cinemas extends React.Component {
   render() {
     return (
-      <View style={{backgroundColor: '#555', height: 200, width: 100}}>
-        <TouchableOpacity>
-          <Text>BabaBooey</Text>
-        </TouchableOpacity>
-      </View>
+      <CinemasList />
     );
   }
 }
