@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 const Upcoming = ({
   tumbnail,
   name,
-  releaseDate,
+  trailers,
 }) => (
   <TouchableOpacity
     activeOpacity={0.8}

@@ -8,7 +8,7 @@ class Menu extends React.Component {
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Cinemas')}>
           <Text>Cinemas</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Upcoming')}>
           <Text>Upcoming Movies</Text>
         </TouchableOpacity>
       </View>
