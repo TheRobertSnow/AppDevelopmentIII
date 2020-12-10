@@ -8,20 +8,20 @@ class UpcomingList extends React.Component {
     return (
       <View>
         <FlatList
-        numColumns={1}
-        data={this.props.upcoming}
-        renderItem={({ item: id, poster, title, trailers }) => {
-          return (
-            <Upcoming
-              id={id}
-              thumbnail={poster}
-              name={title}
-              trailers={trailers}
-            />
-          );
-        }}
-        keyExtractor={ up => up.id.toString(10) }
-      />
+          numColumns={1}
+          data={this.props.upcoming}
+          renderItem={({ item: id, poster, title, trailers }) => {
+            return (
+              <Upcoming
+                id={id}
+                thumbnail={poster}
+                name={title}
+                trailers={trailers}
+              />
+            );
+          }}
+          keyExtractor={ up => up.id.toString(10) }
+        />
       </View>
     );
   }
