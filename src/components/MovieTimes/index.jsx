@@ -19,7 +19,7 @@ class MovieTimes extends React.Component {
               />
             );
           } }
-          keyExtractor={time => time.purchase_url}
+          keyExtractor={movieTime => `${movieTime.purchase_url}/${movieTime.time}`}
         />
       </View>
     )
