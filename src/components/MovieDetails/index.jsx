@@ -61,6 +61,7 @@ class MovieDetails extends React.Component {
 const mapStateToProps = (state) => {
   return {
     movies: state.movieReducer,
+    currentMovie: state.currentMovieReducer,
   }
 }
 export default connect(mapStateToProps)(MovieDetails);

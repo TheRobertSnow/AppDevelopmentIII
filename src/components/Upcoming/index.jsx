@@ -3,8 +3,6 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 import styles from './styles';
 import ReactPlayer from 'react-player'
 
-
-
 const Upcoming = ({
   thumbnail,
   name,
@@ -27,7 +25,7 @@ const Upcoming = ({
         width= "100%"
         height= "40%"
         controls= {true}
-      /> 
+      />
     </View>
   </TouchableOpacity>
 );

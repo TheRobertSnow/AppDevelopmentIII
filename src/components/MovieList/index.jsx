@@ -19,7 +19,6 @@ class MovieList extends React.Component {
                 poster={poster}
                 year={year}
                 genres={genres}
-                currentCinema={this.props.currentCinema}
               />
             );
           } }

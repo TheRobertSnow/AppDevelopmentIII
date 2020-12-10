@@ -6,17 +6,15 @@ import { connect } from 'react-redux';
 
 class MovieDetail extends React.Component {
   state = {
-    currentMovie: "",
-    currentCinema: "",
     currentMovieTimes: "",
   }
 
   getTimes() {
     let currentMovieTimes = [];
     for (let i = 0; i < this.props.movies.length; i++) {
-      if (this.props.movies[i].id == this.state.currentMovie) {
+      if (this.props.movies[i].id == this.props.currentMovie) {
         for (let j = 0; j < this.props.movies[i].showtimes.length; j++) {
-          if (this.props.movies[i].showtimes[j].cinema.id == this.state.currentCinema) {
+          if (this.props.movies[i].showtimes[j].cinema.id == this.props.currentCinema) {
             for (let k = 0; k < this.props.movies[i].showtimes[j].schedule.length; k++) {
               currentMovieTimes = [...currentMovieTimes, this.props.movies[i].showtimes[j].schedule[k]];
             };
@@ -28,19 +26,15 @@ class MovieDetail extends React.Component {
   }
 
   async componentDidMount() {
-    const { navigation } = this.props;
-    const currentMovie = await navigation.getParam('id');
-    const currentCinema = await navigation.getParam('currentCinema');
-    this.setState({ currentMovie, currentCinema });
     this.getTimes();
   }
 
   render() {
-    const { currentMovie, currentCinema, currentMovieTimes } = this.state;
+    const { currentMovieTimes } = this.state;
     return (
       <View style={{ flex: 1 }}>
-        <MovieDetails currentMovie={currentMovie}/>
-        <MovieTimes currentMovie={currentMovie} currentMovieTimes={currentMovieTimes}/>
+        <MovieDetails/>
+        <MovieTimes currentMovieTimes={currentMovieTimes}/>
       </View>
     );
   }
@@ -49,6 +43,8 @@ class MovieDetail extends React.Component {
 const mapStateToProps = (state) => {
   return {
     movies: state.movieReducer,
+    currentCinema: state.currentCinemaReducer,
+    currentMovie: state.currentMovieReducer,
   };
 };
 

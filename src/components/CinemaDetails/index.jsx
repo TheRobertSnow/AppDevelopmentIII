@@ -34,6 +34,7 @@ class CinemaDetails extends React.Component {
 const mapStateToProps = (state) => {
   return {
     cinemas: state.theaterReducer,
+    currentCinema: state.currentCinemaReducer,
   }
 }
 export default connect(mapStateToProps)(CinemaDetails);

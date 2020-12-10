@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 
 class CinemaDetail extends React.Component {
   state = {
-    currentCinema: "",
     currentMovies: "",
   }
 
@@ -14,7 +13,7 @@ class CinemaDetail extends React.Component {
     let currentMovies = [];
     for (let i = 0; i < this.props.movies.length; i++) {
       for (let j = 0; j < this.props.movies[i].showtimes.length; j++) {
-        if (this.props.movies[i].showtimes[j].cinema.id == this.state.currentCinema) {
+        if (this.props.movies[i].showtimes[j].cinema.id == this.props.currentCinema) {
           currentMovies = [...currentMovies, this.props.movies[i]];
         };
       };
@@ -23,18 +22,15 @@ class CinemaDetail extends React.Component {
   }
 
   async componentDidMount() {
-    const { navigation } = this.props;
-    const currentCinema = await navigation.getParam('id');
-    this.setState({ currentCinema });
     this.getMovies();
   }
 
   render() {
-    const { currentCinema, currentMovies } = this.state;
+    const { currentMovies } = this.state;
     return (
       <View style={{ flex: 1 }}>
-        <CinemaDetails currentCinema={currentCinema}/>
-        <MovieList currentCinema={currentCinema} currentMovies={currentMovies}/>
+        <CinemaDetails/>
+        <MovieList currentMovies={currentMovies}/>
       </View>
     );
   }
@@ -43,6 +39,7 @@ class CinemaDetail extends React.Component {
 const mapStateToProps = (state) => {
   return {
     movies: state.movieReducer,
+    currentCinema: state.currentCinemaReducer,
   };
 };
 
