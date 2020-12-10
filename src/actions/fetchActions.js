@@ -2,6 +2,7 @@ import * as constants from '../constants';
 import tokenService from '../services/tokenKvikmyndirService';
 import theaterService from '../services/theaterKvikmyndirService';
 import movieService from '../services/movieKvikmyndirService';
+import upcomingService from '../services/upcomingKvikmyndirService';
 
 export const fetchTheaters = (token) => {
   return async dispatch => {
@@ -32,10 +33,10 @@ export const fetchMovies = (token) => {
   };
 };
 
-const getMoviesSuccess = token => {
+const getMoviesSuccess = movies => {
   return {
     type: constants.FETCH_MOVIES,
-    payload: token,
+    payload: movies,
   };
 };
 
@@ -54,5 +55,23 @@ const getTokenSuccess = token => {
   return {
     type: constants.FETCH_TOKEN,
     payload: token,
+  };
+};
+
+export const fetchUpcoming = (token) => {
+  return async dispatch => {
+    try {
+      const upcoming = await movieService(token);
+      dispatch(getUpcomingSuccess(upcoming));
+    } catch (err) {
+      // TODO: Should dispatch an error action
+    }
+  };
+};
+
+const getUpcomingSuccess = upcoming => {
+  return {
+    type: constants.FETCH_UPCOMING,
+    payload: upcoming,
   };
 };

@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import { Provider, connect } from 'react-redux';
 import StackNavigator from './src/routes';
 import reducers from './src/reducers';
-import { fetchToken, fetchTheaters, fetchMovies } from './src/actions/fetchActions';
+import { fetchToken, fetchTheaters, fetchMovies, fetchUpcoming } from './src/actions/fetchActions';
 
 class SubApp extends React.Component {
   componentDidMount() {
@@ -14,6 +14,7 @@ class SubApp extends React.Component {
   componentDidUpdate() {
     this.props.fetchTheaters(this.props.token);
     this.props.fetchMovies(this.props.token);
+    this.props.fetchUpcoming(this.props.token);
   }
 
   render() {
@@ -30,7 +31,12 @@ const mapStateToProps = (state) => {
 };
 
 
-const ConnectedSubApp = connect(mapStateToProps, { fetchToken, fetchTheaters, fetchMovies })(SubApp);
+const ConnectedSubApp = connect(mapStateToProps, {
+  fetchToken,
+  fetchTheaters,
+  fetchMovies,
+  fetchUpcoming,
+})(SubApp);
 
 export default function App() {
   return (
