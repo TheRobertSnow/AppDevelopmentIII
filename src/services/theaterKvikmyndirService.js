@@ -10,6 +10,12 @@ const theaterService = async (token) => {
     },
   });
   const data = await result.json();
+  if(data){
+    for (let index = 0; index < data.length; index++) {
+      //console.log(data[index]["address\t"]);
+      data[index]["address"] = data[index]["address\t"]
+    }
+  }
   return data.sort((a, b) => a.name.localeCompare(b.name));
 };
 
