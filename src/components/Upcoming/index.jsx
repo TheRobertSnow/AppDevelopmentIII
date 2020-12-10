@@ -3,8 +3,6 @@ import { View, Text, TouchableOpacity, Image,FlatList } from 'react-native';
 import styles from './styles';
 import ReactPlayer from 'react-player'
 
-
-
 class Upcoming extends React.Component {
 
  

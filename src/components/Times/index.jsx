@@ -14,7 +14,7 @@ const Times = ({
   >
     <View style={styles.button}>
       <Text style={styles.buttonText}>Time: {time}</Text>
-      <Text>Purchase!</Text>
+      <Text>Purchase Ticket</Text>
     </View>
   </TouchableOpacity>
 );

@@ -2,3 +2,5 @@ export const FETCH_THEATERS = 'FETCH_THEATERS';
 export const FETCH_MOVIES = 'FETCH_MOVIES';
 export const FETCH_TOKEN = 'FETCH_TOKEN';
 export const FETCH_UPCOMING = 'FETCH_UPCOMING';
+export const CURRENT_CINEMA = 'CURRENT_CINEMA';
+export const CURRENT_MOVIE = 'CURRENT_MOVIE';
