@@ -8,7 +8,9 @@ export const fetchTheaters = (token) => {
     try {
       const theaters = await theaterService(token);
       dispatch(getTheatersSuccess(theaters));
-    } catch (err) {
+    } 
+    catch (err) {
+      console.log(err);
       // TODO: Should dispatch an error action
     }
   };
@@ -26,7 +28,9 @@ export const fetchMovies = (token) => {
     try {
       const movies = await movieService(token);
       dispatch(getMoviesSuccess(movies));
-    } catch (err) {
+    } 
+    catch (err) {
+      console.log(err);
       // TODO: Should dispatch an error action
     }
   };
@@ -44,7 +48,9 @@ export const fetchToken = () => {
     try {
       const token = await tokenService();
       dispatch(getTokenSuccess(token));
-    } catch (err) {
+    } 
+    catch (err) {
+      console.log(err);
       // TODO: Should dispatch an error action
     }
   };
