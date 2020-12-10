@@ -21,14 +21,9 @@ class Upcoming extends React.Component {
           source={{ uri: this.props.id.poster }}
         />
         
-        {/*linkurinn fyrir trailernum */ console.log(this.props.id.trailers["0"].results["0"].url)}
+        {//the link:   console.log(this.props.id.trailers["0"].results["0"].url)}
         
-        <ReactPlayer
-        url= {this.props.id.trailers["0"].results["0"].url}
-        width= "100%"
-        height= "40%"
-        controls= {true}
-      />
+        }
         
         
       </View>
@@ -40,7 +35,12 @@ class Upcoming extends React.Component {
 
 
 /*
-          
+    <ReactPlayer
+        url= {this.props.id.trailers["0"].results["0"].url}
+        width= "100%"
+        height= "40%"
+        controls= {true}
+      />      
 
 
 */
