@@ -1,27 +1,13 @@
 import React from 'react';
-import {
-  FlatList,
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-} from 'react-native';
+import { FlatList, View, Text, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import Cinema from '../Cinema';
-
-const styles = StyleSheet.create({
-  listContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 10,
-  },
-});
+import styles from './styles';
 
 class CinemasList extends React.Component {
   render() {
     return (
-      <View style={styles.listContainer}>
+      <View style={styles.container}>
         <FlatList
           numColumns={1}
           data={this.props.cinemas}
