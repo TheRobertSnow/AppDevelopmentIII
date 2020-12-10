@@ -1,21 +1,20 @@
 import { StyleSheet } from 'react-native';
-import { Dimensions } from 'react-native';
-
-const windowWidth = Dimensions.get('window').width;
 
 export default StyleSheet.create({
   cinemaContainer: {
     backgroundColor: '#fff',
-    marginBottom: 10,
-    flexDirection: 'row',
+    marginBottom: 5,
+    marginTop: 5,
+    marginLeft: 10,
+    marginRight: 10,
+    flexDirection: 'column',
     padding: 15,
     borderRadius: 10,
-    width: windowWidth - 100,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   cinemaContainerText: {
-    marginLeft: 5,
-    marginRight: 5,
+    margin: 3,
     fontSize: 16,
   },
 });

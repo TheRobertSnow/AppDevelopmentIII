@@ -3,11 +3,12 @@ import { View, FlatList, Text, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './styles';
 
-class ContactDetail extends React.Component {
+class CinemaDetails extends React.Component {
   render(){
     return(
       <View>
         <FlatList
+          scrollEnabled={false}
           numColumns={1}
           data={this.props.cinemas.filter(cinema => cinema.id == this.props.currentCinema)}
           renderItem={ ({ item: { id, name, description, address, city, phone, website } }) => {
@@ -36,4 +37,4 @@ const mapStateToProps = (state) => {
     cinemas: state.theaterReducer,
   }
 }
-export default connect(mapStateToProps)(ContactDetail);
+export default connect(mapStateToProps)(CinemaDetails);

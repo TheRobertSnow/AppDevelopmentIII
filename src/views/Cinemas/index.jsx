@@ -6,7 +6,9 @@ import CinemasList from '../../components/CinemasList';
 class Cinemas extends React.Component {
   render() {
     return (
-      <CinemasList />
+      <View style={{ flex: 1 }}>
+        <CinemasList/>
+      </View>
     );
   }
 }
@@ -16,11 +18,5 @@ const mapStateToProps = (state) => {
     theaters: state.theaterReducer,
   };
 };
-
-// const mapStateToProps = ({ token }) => ({ token });
-
-// const mapDispatchToProps = {
-//   fetchToken,
-// };
 
 export default connect(mapStateToProps)(Cinemas);
