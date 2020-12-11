@@ -12,6 +12,14 @@ export default StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
     backgroundColor: '#fff',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
   },
   containerText: {
     padding: 6,

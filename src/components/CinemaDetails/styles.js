@@ -3,14 +3,13 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   container: {
     flexDirection: 'column',
-    marginLeft: 10,
-    marginRight: 10,
-    marginTop: 10,
     marginBottom: 5,
-    borderRadius: 10,
     padding: 10,
-    backgroundColor: '#fff',
     justifyContent: 'center',
+    borderBottomWidth: 4,
+    marginLeft: 5,
+    marginRight: 5,
+    borderBottomColor: '#d3d3d3',
   },
   containerText: {
     padding: 4,

@@ -6,22 +6,20 @@ import styles from './styles';
 class CinemaDetails extends React.Component {
   render(){
     return(
-      <View>
+      <View style={styles.container}>
         <FlatList
           scrollEnabled={false}
           numColumns={1}
           data={this.props.cinemas.filter(cinema => cinema.id == this.props.currentCinema)}
           renderItem={ ({ item: { id, name, description, address, city, phone, website } }) => {
             return (
-              <TouchableOpacity activeOpacity={0.8}>
-                <View style={styles.container}>
-                  <Text style={styles.containerName}>{name}</Text>
-                  <Text style={styles.containerText}>{description}</Text>
-                  <Text style={styles.containerText}>Heimilisfang: {address}, {city}</Text>
-                  <Text style={styles.containerText}>Símanúmer: {phone}</Text>
-                  <Text style={styles.containerText}>Vefsíða: {website}</Text>
-                </View>
-              </TouchableOpacity>
+              <View>
+                <Text style={styles.containerName}>{name}</Text>
+                <Text style={styles.containerText}>{description}</Text>
+                <Text style={styles.containerText}>Heimilisfang: {address}, {city}</Text>
+                <Text style={styles.containerText}>Símanúmer: {phone}</Text>
+                <Text style={styles.containerText}>Vefsíða: {website}</Text>
+              </View>
             );
           } }
           keyExtractor={cinema => cinema.id.toString(10)}
