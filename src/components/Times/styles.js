@@ -1,15 +1,31 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  button:{
-    backgroundColor: '#4CAF50',
+  container:{
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
     borderRadius: 10,
+    padding: 10,
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 5,
+    marginBottom: 5,
+    backgroundColor: '#fff',
+  },
+  containerText: {
+    padding: 6,
+  },
+  infoContainer: {
+    justifyContent: 'center',
+    width: '60%',
+  },
+  buttonContainer: {
+    backgroundColor: '#4267B2',
+    justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
-    margin: 5,
-    opacity: 0.80,
-  },
-  buttonText: {
-    marginBottom: 8,
+    borderRadius: 10,
+    width: '40%',
   },
 });

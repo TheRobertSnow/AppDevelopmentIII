@@ -18,36 +18,34 @@ class Movie extends React.Component {
         onPress={() => this.assignAndNavigate()}
       >
         <View style={styles.container}>
-          <Text style={styles.containerName}>{this.props.title}</Text>
-          <View style={styles.innerContainer}>
-            <View style={styles.infoContainer}>
-              <Text style={styles.containerText}>Útgefin árið: {this.props.year}</Text>
-              {
-                this.props.genres[0].ID == null
-                ?
-                <></>
-                :
-                <View>
-                  <Text style={styles.containerText}>Tegundir: </Text>
-                  <FlatList
-                    numColumns={1}
-                    data={this.props.genres}
-                    renderItem={ ({ item: { ID, Name } }) => {
-                      return (
-                        <Text style={styles.containerText}>{Name}</Text>
-                      );
-                    } }
-                    keyExtractor={genre => genre.ID.toString(10)}
-                  />
-                </View>
-              }
-            </View>
-            <View style={styles.imageContainer}>
-              <Image style={styles.poster}
-                resizeMode="cover"
-                source={{ uri: this.props.poster }}
-              />
-            </View>
+          <View style={styles.infoContainer}>
+            <Text style={styles.containerName}>{this.props.title}</Text>
+            <Text style={styles.containerText}>Útgefin árið: {this.props.year}</Text>
+            {
+              this.props.genres[0].ID == null
+              ?
+              <></>
+              :
+              <View style={styles.genreContainer}>
+                <Text>Tegundir: </Text>
+                <FlatList
+                  numColumns={1}
+                  data={this.props.genres}
+                  renderItem={ ({ item: { ID, Name } }) => {
+                    return (
+                      <Text>{Name}</Text>
+                    );
+                  } }
+                  keyExtractor={genre => genre.ID.toString(10)}
+                />
+              </View>
+            }
+          </View>
+          <View style={styles.imageContainer}>
+            <Image style={styles.poster}
+              resizeMode="cover"
+              source={{ uri: this.props.poster }}
+            />
           </View>
         </View>
       </TouchableOpacity>

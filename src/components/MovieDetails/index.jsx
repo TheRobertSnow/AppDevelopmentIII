@@ -26,14 +26,14 @@ class MovieDetails extends React.Component {
                         ?
                         <></>
                         :
-                        <View>
-                          <Text style={styles.containerText}>Tegundir: </Text>
+                        <View style={styles.genreContainer}>
+                          <Text>Tegundir: </Text>
                           <FlatList
                             numColumns={1}
                             data={genres}
                             renderItem={ ({ item: { ID, Name } }) => {
                               return (
-                                <Text style={styles.containerText}>{Name}</Text>
+                                <Text>{Name}</Text>
                               );
                             } }
                             keyExtractor={genre => genre.ID.toString(10)}

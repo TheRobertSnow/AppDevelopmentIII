@@ -8,15 +8,16 @@ export default StyleSheet.create({
     marginTop: 10,
     marginBottom: 5,
     borderRadius: 10,
+    padding: 10,
     backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
   },
   containerText: {
-    margin: 5,
+    padding: 4,
   },
   containerName: {
-    margin: 5,
+    padding: 4,
     fontSize: 25,
+    fontWeight: 'bold',
   },
 });

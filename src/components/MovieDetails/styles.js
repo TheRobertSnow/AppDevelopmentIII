@@ -8,32 +8,36 @@ export default StyleSheet.create({
     marginRight: 10,
     marginTop: 10,
     marginBottom: 5,
+    padding: 9,
     borderRadius: 10,
     backgroundColor: '#fff',
   },
   containerText: {
-    marginBottom: 8,
+    padding: 6,
   },
   innerContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    margin: 5,
   },
   infoContainer: {
     justifyContent: 'center',
-    width: '65%',
+    width: '60%',
+  },
+  genreContainer: {
+    padding: 6,
+    flexDirection: 'row',
   },
   imageContainer: {
-    width: '30%',
+    justifyContent: 'center',
+    width: '40%',
   },
   containerName: {
-    margin: 8,
+    padding: 6,
     fontSize: 25,
   },
   poster: {
     width: '100%',
-    height: 180,
-    margin: 5,
-    borderRadius: 8,
+    height: 250,
+    borderRadius: 10,
   },
 });

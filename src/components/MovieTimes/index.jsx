@@ -5,6 +5,12 @@ import Times from '../Times';
 import styles from './styles';
 
 class MovieTimes extends React.Component {
+  getMovie() {
+    return (this.props.movies.filter(movie => movie.id == this.props.currentMovie)[0]);
+  };
+  getCinema() {
+    return (this.props.cinemas.filter(cinema => cinema.id == this.props.currentCinema)[0]);
+  };
   render(){
     return(
       <View style={styles.container}>
@@ -16,6 +22,8 @@ class MovieTimes extends React.Component {
               <Times
                 purchase_url={purchase_url}
                 time={time}
+                movie={this.getMovie()}
+                cinema={this.getCinema()}
               />
             );
           } }
@@ -27,7 +35,10 @@ class MovieTimes extends React.Component {
 }
 const mapStateToProps = (state) => {
   return {
-    movies: state.upcomingReducer,
+    currentMovie: state.currentMovieReducer,
+    currentCinema: state.currentCinemaReducer,
+    movies: state.movieReducer,
+    cinemas: state.theaterReducer,
   }
 }
 export default connect(mapStateToProps)(MovieTimes);

@@ -2,38 +2,38 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     alignItems: 'center',
     marginLeft: 10,
     marginRight: 10,
     marginTop: 5,
     marginBottom: 5,
+    padding: 8,
     borderRadius: 10,
     backgroundColor: '#fff',
   },
   containerText: {
-    marginBottom: 8,
-  },
-  innerContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    margin: 5,
+    padding: 6,
   },
   infoContainer: {
     justifyContent: 'center',
-    width: '65%',
+    width: '67%',
   },
   imageContainer: {
-    width: '30%',
+    justifyContent: 'center',
+    width: '33%',
+  },
+  genreContainer: {
+    padding: 6,
+    flexDirection: 'row',
   },
   containerName: {
-    margin: 8,
-    fontSize: 25,
+    padding: 6,
+    fontSize: 22,
   },
   poster: {
     width: '100%',
     height: 180,
-    margin: 5,
-    borderRadius: 8,
+    borderRadius: 10,
   },
 });

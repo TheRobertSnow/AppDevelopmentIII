@@ -17,10 +17,9 @@ class CinemaDetails extends React.Component {
                 <View style={styles.container}>
                   <Text style={styles.containerName}>{name}</Text>
                   <Text style={styles.containerText}>{description}</Text>
-                  <Text style={styles.containerText}>{address}</Text>
-                  <Text style={styles.containerText}>{city}</Text>
-                  <Text style={styles.containerText}>{phone}</Text>
-                  <Text style={styles.containerText}>{website}</Text>
+                  <Text style={styles.containerText}>Heimilisfang: {address}, {city}</Text>
+                  <Text style={styles.containerText}>Símanúmer: {phone}</Text>
+                  <Text style={styles.containerText}>Vefsíða: {website}</Text>
                 </View>
               </TouchableOpacity>
             );

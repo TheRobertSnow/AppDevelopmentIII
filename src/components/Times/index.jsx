@@ -1,22 +1,29 @@
 import React from 'react';
-import { withNavigation } from 'react-navigation';
 import { View, FlatList, Text, Image, TouchableOpacity, Linking } from 'react-native';
 import styles from './styles';
 
-const Times = ({
-  purchase_url,
-  time,
-  navigation: {navigate}
-}) => (
-  <TouchableOpacity
-    activeOpacity={0.8}
-    onPress={()=> Linking.openURL(purchase_url)}
-  >
-    <View style={styles.button}>
-      <Text style={styles.buttonText}>Time: {time}</Text>
-      <Text>Purchase Ticket</Text>
-    </View>
-  </TouchableOpacity>
-);
+class Times extends React.Component {
+  render(){
+    return(
+      <TouchableOpacity
+        activeOpacity={0.8}
+      >
+        <View style={styles.container}>
+          <View style={styles.infoContainer}>
+            <Text style={styles.containerText}>Bíómynd: {this.props.movie.title}</Text>
+            <Text style={styles.containerText}>Bíó: {this.props.cinema.name}</Text>
+            <Text style={styles.containerText}>Klukkan: {this.props.time}</Text>
+          </View>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={()=> Linking.openURL(this.props.purchase_url)}
+          >
+            <Text style={styles.buttonText}>Kaupa Miða</Text>
+          </TouchableOpacity>
+        </View>
+      </TouchableOpacity>
+    );
+  }
+}
 
-export default withNavigation(Times);
+export default Times;
