@@ -32,7 +32,7 @@ class Upcoming extends React.Component {
             <></>
             :
             <View style={styles.trailerContainer}>
-              <Text style={styles.trailerText}>Stiklur: </Text>
+              <Text style={styles.containerText}>Stiklur: </Text>
               <FlatList
                 numColumns={1}
                 data={this.props.trailers[0].results}
@@ -40,10 +40,10 @@ class Upcoming extends React.Component {
                   return (
                     <View>
                       <TouchableOpacity
-                        style={styles.buttonContainer}
+                        style={styles.button}
                         onPress={()=> this.playVideo(url)}
                       >
-                        <Text style={styles.trailerText}>{name} {type} á {site}</Text>
+                        <Text style={styles.buttonText}>{name} {type} á {site}</Text>
                       </TouchableOpacity>
                     </View>
                   );

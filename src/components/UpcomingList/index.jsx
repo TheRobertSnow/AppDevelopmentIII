@@ -2,11 +2,12 @@ import React from 'react';
 import { View, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import Upcoming from '../Upcoming';
+import styles from './styles';
 
 class UpcomingList extends React.Component {
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <FlatList
           numColumns={1}
           data={this.props.upcoming}
