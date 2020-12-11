@@ -15,7 +15,7 @@ const upcomingService = async (token) => {
       data[index]["releaseDate"] = data[index]["release-dateIS"];
     }
   }
-  return data;
+  return data.sort((a, b) => a['release-dateIS'].localeCompare(b['release-dateIS'])).reverse();
 };
 
 export default upcomingService;

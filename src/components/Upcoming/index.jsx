@@ -58,11 +58,9 @@ class Upcoming extends React.Component {
         }
       </View>
     );
+
   }
 }
-
-
-
 /*
     <ReactPlayer
         url= {this.props.id.trailers["0"].results["0"].url}
@@ -70,7 +68,5 @@ class Upcoming extends React.Component {
         height= "40%"
         controls= {true}
       />
-
-
 */
 export default Upcoming;
