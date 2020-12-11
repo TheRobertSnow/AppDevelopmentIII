@@ -67,7 +67,7 @@ const getTokenSuccess = token => {
 export const fetchUpcoming = (token) => {
   return async dispatch => {
     try {
-      const upcoming = await movieService(token);
+      const upcoming = await upcomingService(token);
       dispatch(getUpcomingSuccess(upcoming));
     } catch (err) {
       // TODO: Should dispatch an error action

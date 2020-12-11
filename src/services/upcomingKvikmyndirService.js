@@ -10,6 +10,11 @@ const upcomingService = async (token) => {
     },
   });
   const data = await result.json();
+  if(data){
+    for (let index = 0; index < data.length; index++) {
+      data[index]["releaseDate"] = data[index]["release-dateIS"]
+    }
+  }
   return data;
 };
 
