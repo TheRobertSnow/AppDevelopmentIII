@@ -6,6 +6,7 @@ import CinemaDetail from '../views/CinemaDetail';
 import MovieDetail from '../views/MovieDetail';
 import Menu from '../views/Menu';
 import Upcoming from '../views/Upcoming';
+import Trailer from '../views/Trailer';
 
 const StackNavigator = createStackNavigator({
   Menu,
@@ -13,6 +14,7 @@ const StackNavigator = createStackNavigator({
   CinemaDetail,
   Upcoming,
   MovieDetail,
+  Trailer,
 });
 
 export default createAppContainer(StackNavigator);
