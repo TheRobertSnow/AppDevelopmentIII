@@ -1,21 +1,10 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image,FlatList } from 'react-native';
 import styles from './styles';
-import ReactPlayer from 'react-player'
+import { withNavigation } from 'react-navigation';
+import { WebView } from 'react-native-webview';
 
 class Upcoming extends React.Component {
-  playVideo(url) {
-    return (
-      <ReactPlayer style={styles.reactPlayer}
-        url= {url}
-        width= "100%"
-        height= "40%"
-        playing={true}
-        controls= {true}
-        muted={true}
-      />
-    );
-  };
   render() {
     return(
       <View style={styles.container}>
@@ -32,7 +21,7 @@ class Upcoming extends React.Component {
             <></>
             :
             <View style={styles.trailerContainer}>
-              <Text style={styles.trailerText}>Stiklur: </Text>
+              <Text style={styles.containerText}>Stiklur: </Text>
               <FlatList
                 numColumns={1}
                 data={this.props.trailers[0].results}
@@ -40,10 +29,10 @@ class Upcoming extends React.Component {
                   return (
                     <View>
                       <TouchableOpacity
-                        style={styles.buttonContainer}
-                        onPress={()=> this.playVideo(url)}
+                        style={styles.button}
+                        onPress={()=> this.props.navigation.navigate('Trailer', {uri: url})}
                       >
-                        <Text style={styles.trailerText}>{name} {type} á {site}</Text>
+                        <Text style={styles.buttonText}>{name} {type} á {site}</Text>
                       </TouchableOpacity>
                     </View>
                   );
@@ -71,4 +60,4 @@ class Upcoming extends React.Component {
         controls= {true}
       />
 */
-export default Upcoming;
+export default withNavigation(Upcoming);
