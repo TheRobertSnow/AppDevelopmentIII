@@ -6,50 +6,46 @@ import styles from './styles';
 class MovieDetails extends React.Component {
   render(){
     return(
-      <View>
+      <View style={styles.container}>
         <FlatList
           scrollEnabled={false}
           numColumns={1}
           data={this.props.movies.filter(movie => movie.id == this.props.currentMovie)}
           renderItem={ ({ item: { id, title, poster, plot, durationMinutes, year, genres } }) => {
             return (
-              <TouchableOpacity activeOpacity={0.8}>
-                <View style={styles.container}>
+              <View style={styles.innerContainer}>
+                <View style={styles.infoContainer}>
                   <Text style={styles.containerName}>{title}</Text>
-                  <View style={styles.innerContainer}>
-                    <View style={styles.infoContainer}>
-                      <Text style={styles.containerText}>{plot}</Text>
-                      <Text style={styles.containerText}>Lengd: {durationMinutes} minutes</Text>
-                      <Text style={styles.containerText}>Útgefin árið: {year}</Text>
-                      {
-                        genres[0].ID == null
-                        ?
-                        <></>
-                        :
-                        <View style={styles.genreContainer}>
-                          <Text>Tegundir: </Text>
-                          <FlatList
-                            numColumns={1}
-                            data={genres}
-                            renderItem={ ({ item: { ID, Name } }) => {
-                              return (
-                                <Text>{Name}</Text>
-                              );
-                            } }
-                            keyExtractor={genre => genre.ID.toString(10)}
-                          />
-                        </View>
-                      }
-                    </View>
-                    <View style={styles.imageContainer}>
-                      <Image style={styles.poster}
-                        resizeMode="cover"
-                        source={{ uri: poster }}
+                  <Text style={styles.containerText}>{plot}</Text>
+                  <Text style={styles.containerText}>Lengd: {durationMinutes} minutes</Text>
+                  <Text style={styles.containerText}>Útgefin árið: {year}</Text>
+                  {
+                    genres[0].ID == null
+                    ?
+                    <></>
+                    :
+                    <View style={styles.genreContainer}>
+                      <Text>Tegundir: </Text>
+                      <FlatList
+                        numColumns={1}
+                        data={genres}
+                        renderItem={ ({ item: { ID, Name } }) => {
+                          return (
+                            <Text>{Name}</Text>
+                          );
+                        } }
+                        keyExtractor={genre => genre.ID.toString(10)}
                       />
                     </View>
-                  </View>
+                  }
                 </View>
-              </TouchableOpacity>
+                <View style={styles.imageContainer}>
+                  <Image style={styles.poster}
+                    resizeMode="cover"
+                    source={{ uri: poster }}
+                  />
+                </View>
+              </View>
             );
           } }
           keyExtractor={cinema => cinema.id.toString(10)}

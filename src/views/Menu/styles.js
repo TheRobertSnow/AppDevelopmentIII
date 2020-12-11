@@ -46,6 +46,7 @@ export default StyleSheet.create({
   },
   buttonText: {
     fontSize: 20,
+    padding: 10,
   },
 });
 // #fbfbfb

@@ -3,13 +3,19 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   container: {
     flexDirection: 'column',
-    marginBottom: 5,
     padding: 10,
+    borderBottomWidth: 2,
+    borderBottomColor: '#bebebe',
     justifyContent: 'center',
-    borderBottomWidth: 4,
-    marginLeft: 5,
-    marginRight: 5,
-    borderBottomColor: '#d3d3d3',
+    backgroundColor: '#e7e7e7',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.26,
+    shadowRadius: 2.22,
+    elevation: 3,
   },
   containerText: {
     padding: 4,

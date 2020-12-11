@@ -4,13 +4,18 @@ export default StyleSheet.create({
   container: {
     flexDirection: 'column',
     alignItems: 'center',
-    marginLeft: 10,
-    marginRight: 10,
-    marginTop: 10,
-    marginBottom: 5,
     padding: 9,
-    borderRadius: 10,
-    backgroundColor: '#fff',
+    borderBottomWidth: 2,
+    borderBottomColor: '#bebebe',
+    backgroundColor: '#e7e7e7',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.26,
+    shadowRadius: 2.22,
+    elevation: 3,
   },
   containerText: {
     padding: 6,
@@ -32,8 +37,9 @@ export default StyleSheet.create({
     width: '40%',
   },
   containerName: {
-    padding: 6,
+    padding: 4,
     fontSize: 25,
+    fontWeight: 'bold',
   },
   poster: {
     width: '100%',
