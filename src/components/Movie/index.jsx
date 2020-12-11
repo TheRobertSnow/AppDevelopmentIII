@@ -15,7 +15,6 @@ class Movie extends React.Component {
     return(
       <TouchableOpacity
         style={styles.container}
-        activeOpacity={0.8}
         onPress={() => this.assignAndNavigate()}
       >
         <View style={styles.infoContainer}>

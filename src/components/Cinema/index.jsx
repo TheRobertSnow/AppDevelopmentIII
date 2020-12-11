@@ -14,7 +14,6 @@ class Cinema extends React.Component {
     return(
       <TouchableOpacity
         style={styles.cinemaContainer}
-        activeOpacity={0.8}
         onPress={() => this.assignAndNavigate()}
       >
           <Text style={styles.cinemaContainerText}>{this.props.name}</Text>

@@ -11,10 +11,14 @@ export default StyleSheet.create({
   },
   imageContainer: {
     width: window.width,
-    height: window.height/2,
+    height: window.height/1.8,
     alignItems: 'center',
   },
   image: {
+    flex: 1,
+    resizeMode: 'contain',
+  },
+  titleImg: {
     flex: 1,
     resizeMode: 'contain',
   },
