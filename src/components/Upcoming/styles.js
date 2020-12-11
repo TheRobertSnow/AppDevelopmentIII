@@ -8,13 +8,31 @@ export default StyleSheet.create({
     marginRight: 10,
     marginTop: 5,
     marginBottom: 5,
+    padding: 12,
     borderRadius: 10,
     backgroundColor: '#fff',
   },
-  thumbnail: {
-    width: 80,
-    height: 80,
-    margin: 10,
-    borderRadius: 50,
+  containerText: {
+    padding: 4,
+  },
+  trailerText: {
+    padding: 4,
+  },
+  infoContainer: {
+    justifyContent: 'center',
+    width: '67%',
+  },
+  imageContainer: {
+    justifyContent: 'center',
+    width: '33%',
+  },
+  containerName: {
+    padding: 6,
+    fontSize: 22,
+  },
+  poster: {
+    width: '100%',
+    height: 180,
+    borderRadius: 10,
   },
 });

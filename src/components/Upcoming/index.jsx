@@ -18,47 +18,49 @@ class Upcoming extends React.Component {
   };
   render() {
     return(
-      <View>
-        <Text>{this.props.title}</Text>
-        <Text>{this.props.releaseDate}</Text>
-        <Image style={styles.thumbnail}
-          resizeMode="cover"
-          source={{ uri: this.props.poster }}
-        />
-        {
-          this.props.trailers.length == 0
-          ?
-          <View></View>
-          :
-          this.props.trailers[0].results.length == 0
-          ?
-          <View></View>
-          :
-          <View>
-            <Text>Trailers: </Text>
-            <FlatList
-              numColumns={1}
-              data={this.props.trailers[0].results}
-              renderItem={ ({ item: { id, key, name, site, size, type, url } }) => {
-                return (
-                  <View>
-                    <Text>{name}</Text>
-                    <TouchableOpacity
-                      style={styles.buttonContainer}
-                      onPress={()=> this.playVideo(url)}
-                    >
-                      <Text>Spila Trailer</Text>
-                    </TouchableOpacity>
-                  </View>
-                );
-              } }
-              keyExtractor={trailer => trailer.key.toString(10)}
-            />
-          </View>
-        }
+      <View style={styles.container}>
+        <View style={styles.infoContainer}>
+          <Text style={styles.containerName}>{this.props.title}</Text>
+          <Text style={styles.containerText}>Útgefin: {this.props.releaseDate}</Text>
+          {
+            this.props.trailers.length == 0
+            ?
+            <></>
+            :
+            this.props.trailers[0].results.length == 0
+            ?
+            <></>
+            :
+            <View style={styles.trailerContainer}>
+              <Text style={styles.trailerText}>Stiklur: </Text>
+              <FlatList
+                numColumns={1}
+                data={this.props.trailers[0].results}
+                renderItem={ ({ item: { id, key, name, site, size, type, url } }) => {
+                  return (
+                    <View>
+                      <TouchableOpacity
+                        style={styles.buttonContainer}
+                        onPress={()=> this.playVideo(url)}
+                      >
+                        <Text style={styles.trailerText}>{name} {type} á {site}</Text>
+                      </TouchableOpacity>
+                    </View>
+                  );
+                } }
+                keyExtractor={trailer => trailer.key.toString(10)}
+              />
+            </View>
+          }
+        </View>
+        <View style={styles.imageContainer}>
+          <Image style={styles.poster}
+            resizeMode="cover"
+            source={{ uri: this.props.poster }}
+          />
+        </View>
       </View>
     );
-
   }
 }
 /*
