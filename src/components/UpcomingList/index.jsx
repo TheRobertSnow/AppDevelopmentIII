@@ -10,14 +10,14 @@ class UpcomingList extends React.Component {
         <FlatList
           numColumns={1}
           data={this.props.upcoming}
-          renderItem={({ item: id, poster, title, trailers, releaseDate }) => {
-      
+          renderItem={({ item: { id, poster, title, trailers, releaseDate } }) => {
             return (
-              // id er bara dataið sem við actually notum 
-              // idunno
               <Upcoming
                 id={id}
-                
+                poster={poster}
+                title={title}
+                trailers={trailers}
+                releaseDate={releaseDate}
               />
             );
           }}

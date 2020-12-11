@@ -4,7 +4,7 @@ import UpcomingList from '../../components/UpcomingList';
 class Upcoming extends React.Component {
   render() {
     return (
-      <UpcomingList />
+      <UpcomingList/>
     );
   }
 }

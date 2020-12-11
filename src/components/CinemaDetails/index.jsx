@@ -25,7 +25,7 @@ class CinemaDetails extends React.Component {
             );
           } }
           keyExtractor={cinema => cinema.id.toString(10)}
-          />
+        />
       </View>
     )
   }
