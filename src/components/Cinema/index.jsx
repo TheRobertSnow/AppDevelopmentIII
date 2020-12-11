@@ -13,13 +13,12 @@ class Cinema extends React.Component {
   render(){
     return(
       <TouchableOpacity
+        style={styles.cinemaContainer}
         activeOpacity={0.8}
         onPress={() => this.assignAndNavigate()}
       >
-        <View style={styles.cinemaContainer}>
           <Text style={styles.cinemaContainerText}>{this.props.name}</Text>
-          <Text style={styles.cinemaContainerText}>{this.props.website}</Text>
-        </View>
+          <Text style={styles.cinemaContainerLink}>{this.props.website}</Text>
       </TouchableOpacity>
     );
   }
