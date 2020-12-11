@@ -12,14 +12,6 @@ export default StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
     backgroundColor: '#fff',
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.22,
-    shadowRadius: 2.22,
-    elevation: 3,
   },
   containerText: {
     padding: 6,
@@ -29,7 +21,7 @@ export default StyleSheet.create({
     width: '60%',
   },
   buttonContainer: {
-    backgroundColor: '#4267B2',
+    backgroundColor: '#9abcd5',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
@@ -37,3 +29,4 @@ export default StyleSheet.create({
     width: '40%',
   },
 });
+// #4267B2

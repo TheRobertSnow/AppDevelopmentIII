@@ -7,7 +7,7 @@ export default StyleSheet.create({
     borderBottomWidth: 2,
     borderBottomColor: '#bebebe',
     justifyContent: 'center',
-    backgroundColor: '#e7e7e7',
+    backgroundColor: '#f0f0f0',
     shadowColor: "#000",
     shadowOffset: {
       width: 0,

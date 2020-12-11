@@ -5,10 +5,7 @@ import styles from './styles';
 class Times extends React.Component {
   render(){
     return(
-      <TouchableOpacity
-        style={styles.container}
-        activeOpacity={0.8}
-      >
+      <View style={styles.container}>
         <View style={styles.infoContainer}>
           <Text style={styles.containerText}>Bíómynd: {this.props.movie.title}</Text>
           <Text style={styles.containerText}>Bíó: {this.props.cinema.name}</Text>
@@ -20,7 +17,7 @@ class Times extends React.Component {
         >
           <Text style={styles.buttonText}>Kaupa Miða</Text>
         </TouchableOpacity>
-      </TouchableOpacity>
+      </View>
     );
   }
 }
